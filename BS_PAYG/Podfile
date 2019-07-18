@@ -1,0 +1,18 @@
+target 'BS_PAYG' do
+  
+	pod 'AFNetworking', '~> 3.1.0'
+	pod 'SDCycleScrollView', '~> 1.66'
+	pod 'MBProgressHUD', '~> 1.0.0'
+	pod 'BaiduMapKit', '~> 3.4.4'
+	pod 'Masonry', '~> 1.0.2'
+	pod 'IQKeyboardManager', '~> 3.3.7'
+	pod 'TZImagePickerController', '~> 1.7.8'
+	pod 'MJExtension', '~> 3.0.13'
+	pod 'MJRefresh', '~> 3.1.12'
+	pod 'ESPictureBrowser', '~> 0.4.4'
+	pod 'SDVersion', '~> 4.1'
+	pod 'Bugly', '~> 2.4.8'
+	pod 'MarqueeLabel', '~> 3.1.0'
+  
+
+end

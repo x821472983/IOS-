@@ -1,0 +1,75 @@
+//
+//  PrefixHeader.pch
+//  view_test
+//
+//  Created by 梁志华 on 2019/3/4.
+//  Copyright © 2019 梁志华. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//系统版本
+#define iOS7Above ([UIDevice currentDevice].systemVersion.floatValue <= 7.0f)
+#define iOS7Later ([UIDevice currentDevice].systemVersion.floatValue >= 7.0f)
+
+#define iOS8Above ([UIDevice currentDevice].systemVersion.floatValue <= 8.0f)
+#define iOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
+
+#define iOS9Above ([UIDevice currentDevice].systemVersion.floatValue <= 9.0f)
+#define iOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
+#define iOS9_1Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.1f)
+#define iOS10Later ([UIDevice currentDevice].systemVersion.floatValue >= 10.0f)
+
+//颜色相关
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r,g,b) RGBA(r,g,b,1.0f)
+#define HEXCOLOR_RGBA(rgbValue,a) [UIColor colorWithRed:((float)(((rgbValue) & 0xFF0000) >> 16))/255.0 green:((float)(((rgbValue) & 0xFF00)>>8))/255.0 blue: ((float)((rgbValue) & 0xFF))/255.0 alpha:(a)]
+#define HEXCOLOR_RGB(hex) HEXCOLOR_RGBA(hex, 1.0f)
+
+//主题颜色
+#define JXG_COLOR [UIColor colorWithRed:80/255.0 green:170/255.0 blue:248/255.0 alpha:1]
+
+//轨迹单页点数量
+#define PAGE_MAXSIZE 100
+
+
+//屏幕宽高
+#define SCREEN_FRAME ([UIScreen mainScreen].applicationFrame)
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define SELF_VIEW self.view
+
+//百度鹰眼
+#define BUNDLE_ID @"game1.BS-PAYG"
+#define BAIDUMAP_KEY @"jve6poEl3VfjMf5WsMwdc68qrNG5I39U"
+#define BAIDUMAP_serviceID 211242
+
+#ifdef DEBUG
+#define NSLog(format, ...) printf("************调试************\n%s\n\n", [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+#else
+#define NSLog(format, ...)
+#endif
+
+//openURL
+#define OPEN_URL(__STR__) (iOS10Later ? [[UIApplication sharedApplication] openURL:__STR__ options:@{} completionHandler:nil] : [[UIApplication sharedApplication] openURL:__STR__])
+
+
+#import "MBProgressHUD.h"
+#import "UIAlertTool.h"
+#import "Masonry.h"
+#import "UIView+Common.h"
+#import "UITextField+Custom.h"
+#import "AFNetworking.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
+#import "ESPictureBrowser.h"
+#import "UIImageView+WebCache.h"
+
+//网络
+#import "YCManager.h"
+//模型
+#import "UserModel.h"
+
+
+#endif /* PrefixHeader_pch */
